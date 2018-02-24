@@ -76,8 +76,8 @@ var articles = {
                         
                     </p>`
         }
-    
 };
+
 function createTemplate(data){
     title = data.title;
     content = data.content;
