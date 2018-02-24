@@ -16,7 +16,7 @@ var articles = {
         },    
       'article-three' : {
         title: 'Article Three',
-        content: "
+        content: `
         <p>
                         article 3
                         
@@ -34,7 +34,7 @@ var articles = {
                         My new way of doing thing is to matter personally
                         My new way of doing thing is to matter personally
                         
-                    </p>"
+                    </p>`
         }
 };
 
