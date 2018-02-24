@@ -53,7 +53,7 @@ var articles = {
                         My new way of doing thing is to matter personally
                         
                     </p>`
-        }    
+        },    
      'article-three' : {
         title: 'Article Three',
         content: `
