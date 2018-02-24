@@ -8,55 +8,15 @@ app.use(morgan('combined'));
 var articles = {
      'article-one' : {
         title: 'Article One',
-        content: ` <p>Article 1</p>
+        content: " <p>Article 1</p> "
         },
-    var article-two : {
+    'article-two' : {
         title: 'Article Two',
-        content: `
-        <p>
-                        Article 2
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>`
+        content: 'Article 2'
         },    
-     'article-two' : {
-        title: 'Article Two',
-        content: `
-        <p>
-                        article 2
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>`
-        },    
-     'article-three' : {
+      'article-three' : {
         title: 'Article Three',
-        content: `
+        content: "
         <p>
                         article 3
                         
@@ -74,7 +34,7 @@ var articles = {
                         My new way of doing thing is to matter personally
                         My new way of doing thing is to matter personally
                         
-                    </p>`
+                    </p>"
         }
 };
 
@@ -85,12 +45,12 @@ function createTemplate(data){
 
 var htmlTemplate =`
     <html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
         <body>
             <div>
             <h1>
@@ -108,10 +68,9 @@ var htmlTemplate =`
                 ${content}
             </div>
         </body>
-    
-</html>
-
-    `;
+    </html>
+`
+    ;
     return htmlTemplate;
     
 }
