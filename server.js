@@ -5,34 +5,79 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One',
-    content: `
-    <p>
-                    My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
+var articles = {
+     'article-one' : {
+        title: 'Article One',
+        content: ` <p>Article 1</p>
+        },
+    var article-two : {
+        title: 'Article Two',
+        content: `
+        <p>
+                        Article 2
+                        
+                    </p>
                     
-                </p>
-                
-                 <p>
-                    My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>
                     
-                </p>
-                
-                 <p>
-                    My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
-                    My new way of doing thing is to matter personally
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>`
+        },    
+     'article-two' : {
+        title: 'Article Two',
+        content: `
+        <p>
+                        article 2
+                        
+                    </p>
                     
-                </p>
-                
-    `
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>
+                    
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>`
+        }    
+     'article-three' : {
+        title: 'Article Three',
+        content: `
+        <p>
+                        article 3
+                        
+                    </p>
+                    
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>
+                    
+                     <p>
+                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        My new way of doing thing is to matter personally
+                        
+                    </p>`
+        }
     
 };
-
 function createTemplate(data){
     title = data.title;
     content = data.content;
@@ -75,17 +120,13 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+    //article-name == articleOne
+    //article[article-name] == {} content object for article name
+  var articleName = req.params.articleName;    
+  res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
