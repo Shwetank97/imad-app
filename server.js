@@ -12,7 +12,7 @@ var config = {
     password: process.env.DB_PASSWORD
 };
 
-var pool = new Pool(config);
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -33,6 +33,7 @@ var articles = {
         }
 };
 
+var pool = new Pool(config);
 app.get('/test-db', function(req, res){
     // make a select request
     // return a response
