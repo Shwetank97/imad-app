@@ -33,10 +33,6 @@ var articles = {
         }
 };
 
-function createTemplate(data){
-    title = data.title;
-    content = data.content;
-
 app.get('/test-db', function(req, res){
     // make a select request
     // return a response
@@ -49,6 +45,12 @@ app.get('/test-db', function(req, res){
         }
     });
 });
+
+function createTemplate(data){
+    title = data.title;
+    content = data.content;
+
+
 
 var htmlTemplate =`
     <html>
