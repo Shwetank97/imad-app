@@ -28,25 +28,8 @@ var articles = {
         },    
       'article-three' : {
         title: 'Article Three',
-        content: `
-        <p>
-                        article 3
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>
-                    
-                     <p>
-                        My new way of doing thing is to matter personally.My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        My new way of doing thing is to matter personally
-                        
-                    </p>`
+        content: 'IIIII'
+             
         }
 };
 
